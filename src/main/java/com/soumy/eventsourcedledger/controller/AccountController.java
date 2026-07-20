@@ -1,8 +1,6 @@
 package com.soumy.eventsourcedledger.controller;
 
-import com.soumy.eventsourcedledger.dto.CreateAccountRequest;
-import com.soumy.eventsourcedledger.dto.DepositRequest;
-import com.soumy.eventsourcedledger.dto.DepositResponse;
+import com.soumy.eventsourcedledger.dto.*;
 import com.soumy.eventsourcedledger.entity.Account;
 import com.soumy.eventsourcedledger.service.AccountService;
 import jakarta.validation.Valid;
@@ -28,5 +26,13 @@ public class AccountController {
             @Valid @RequestBody DepositRequest request) {
 
         return accountService.deposit(accountNumber, request);
+    }
+
+    @PostMapping("/{accountNumber}/withdraw")
+    public WithdrawResponse withdraw(
+            @PathVariable String accountNumber,
+            @Valid @RequestBody WithdrawRequest request) {
+
+        return accountService.withdraw(accountNumber, request);
     }
 }

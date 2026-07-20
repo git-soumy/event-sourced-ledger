@@ -1,8 +1,6 @@
 package com.soumy.eventsourcedledger.service;
 
-import com.soumy.eventsourcedledger.dto.CreateAccountRequest;
-import com.soumy.eventsourcedledger.dto.DepositRequest;
-import com.soumy.eventsourcedledger.dto.DepositResponse;
+import com.soumy.eventsourcedledger.dto.*;
 import com.soumy.eventsourcedledger.entity.Account;
 
 public interface AccountService {
@@ -11,5 +9,8 @@ public interface AccountService {
 
     DepositResponse deposit(String accountNumber,
                             DepositRequest request);
+
+    WithdrawResponse withdraw(String accountNumber,
+                              WithdrawRequest request);
 
 }

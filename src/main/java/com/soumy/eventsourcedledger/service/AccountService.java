@@ -7,4 +7,7 @@ public interface AccountService {
 
     Account createAccount(CreateAccountRequest request);
 
+    Account deposit(String accountNumber,
+                    DepositRequest request);
+
 }
